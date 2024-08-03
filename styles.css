@@ -48,4 +48,5 @@ button:hover {
 .guaContent {
   font-size: 18px;
   color: #666;
+  white-space: pre-line; /* 줄바꿈이 적용되도록 설정 */
 }

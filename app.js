@@ -11,11 +11,16 @@ loadGuaData().then(data => {
   const guaContentDiv = document.querySelector(".guaContent");
 
   button.addEventListener("click", function () {
-    const randomIndex = Math.floor(Math.random() * data.length);
-    const gua = data[randomIndex];
+    const randomGuaIndex = Math.floor(Math.random() * data.length);
+    const gua = data[randomGuaIndex];
 
-    guaShapeDiv.textContent = gua.shpae;
-    guaTitleDiv.textContent = gua.title;
-    guaContentDiv.textContent = gua.content;
+    const hyoKeys = Object.keys(gua.hyoContent);
+    const randomHyoIndex = Math.floor(Math.random() * hyoKeys.length);
+    const hyoKey = hyoKeys[randomHyoIndex];
+    const hyo = gua.hyoContent[hyoKey];
+
+    guaShapeDiv.textContent = gua.symbol;
+    guaTitleDiv.textContent = `${gua.title} ${hyoKey} (${gua.index}-${randomHyoIndex + 1})`;
+    guaContentDiv.textContent = hyo;
   });
 });
