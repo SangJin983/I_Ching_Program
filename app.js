@@ -20,7 +20,7 @@ loadGuaData().then(data => {
     const hyo = gua.hyoContent[hyoKey];
 
     guaShapeDiv.textContent = gua.symbol;
-    guaTitleDiv.textContent = `${gua.title} ${hyoKey} (${gua.index}-${randomHyoIndex + 1})`;
+    guaTitleDiv.textContent = `${gua.title} ${hyoKey} (${gua.index}-${6 - randomHyoIndex})`;
     guaContentDiv.textContent = hyo;
   });
 });
